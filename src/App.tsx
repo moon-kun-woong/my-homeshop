@@ -78,7 +78,7 @@ function App() {
 						<Button onClick={() => {
 							console.log('더 보기 버튼 클릭: 고양이 API 호출 시작');
 							
-							axios.get(`http://localhost:3000/cats`)
+							axios.get(`https://express-server-8hnn.onrender.com/cats`)
 								.then((result) => {
 									console.log('API 응답 데이터:', result.data);
 									console.log('API 응답 타입:', Array.isArray(result.data) ? '배열' : typeof result.data);
