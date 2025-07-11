@@ -1,12 +1,18 @@
-import { useState } from "react";
+
 import { Table } from "react-bootstrap";
 import { useSelector } from "react-redux";
 
-function Cart() {
+// Define the type for our Redux store state
+type RootState = {
+    user: string;
+    stock: number[];
+};
 
-    let a = useSelector((state) => {
-        return state.user
-    })
+function Cart() {
+    // Properly type the useSelector hook
+    let username = useSelector((state: RootState) => {
+        return state.user;
+    });
 
     return (
         <Table>
@@ -21,12 +27,13 @@ function Cart() {
             <tbody>
                 <tr>
                     <td>1</td>
-                    <td>{a.name}</td>
-                    <td>{a}</td>
-                    <td>안녕{a.name}</td>
+                    <td>{username}</td>
+                    <td>{username}</td>
+                    <td>안녕 {username}</td>
                 </tr>
             </tbody>
         </Table>
-    )
+    );
 }
+
 export default Cart;

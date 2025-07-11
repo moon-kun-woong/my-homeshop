@@ -1,17 +1,11 @@
 import { useEffect, useState } from "react";
 import { Nav } from "react-bootstrap";
-import { useDispatch } from "react-redux";
 import { useParams } from "react-router-dom";
 import styled from "styled-components";
 import type { CatItem } from "../data";
 
 let BlueBtn = styled.button`
   background: skyBlue;
-  color: black;
-  padding: 10px;`
-
-let CustomBtn = styled.button`
-  background: ${props => props.bg || 'blue'};
   color: black;
   padding: 10px;`
 
@@ -42,7 +36,6 @@ function Detail(props: { cats: CatItem[] }) {
 	let numId = Number(id) || 0;
 	let foundCat = props.cats.find((cat) => cat.id === numId);
 	let [tab, setTab] = useState(0)
-	let dispatch = useDispatch();
 
 	useEffect(() => {
 		if (!foundCat) return;
@@ -75,7 +68,6 @@ function Detail(props: { cats: CatItem[] }) {
 				<br />
 				<BlackCheckBox />
 				<br />
-				<CustomBtn bg="orange">커스텀 버튼</CustomBtn>
 			</Box>
 			{count}
 			<button onClick={() => { setCount(count + 1) }}></button>

@@ -160,7 +160,7 @@ function About() {
 	)
 }
 
-function CatCard(props: { cat: { name: string; desc: string; age?: number; breed?: string }; i: number }) {
+function CatCard(props: { cat: { name: string; desc: string; img: string; age?: number; breed?: string }; i: number }) {
 	const navigate = useNavigate();
 	return (
 		<div className="col-md-4" onClick={() => { navigate(`/detail/${props.i - 1}`) }}>
