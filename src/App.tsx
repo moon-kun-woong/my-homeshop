@@ -70,7 +70,7 @@ function App() {
 							<div className="row">
 								{
 									cats.map((a, i) => {
-										return <CatCard cat={cats[i]} i={i + 1} key={i} />
+										return <CatCard cat={a} i={i + 1} key={i} />
 									})
 								}
 							</div>
